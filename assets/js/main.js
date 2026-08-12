@@ -1,48 +1,58 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navLinks = document.querySelector(".nav-links");
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Mobile Menu Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
 
     if (menuToggle && navLinks) {
-        menuToggle.addEventListener("click", () => {
-            navLinks.classList.toggle("mobile-open");
+        menuToggle.addEventListener('click', () => {
+            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', !isExpanded);
+            navLinks.classList.toggle('is-active');
         });
 
-        navLinks.querySelectorAll("a").forEach((link) => {
-            link.addEventListener("click", () => {
-                navLinks.classList.remove("mobile-open");
+        // Close menu when clicking nav links
+        document.querySelectorAll('.nav-item').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('is-active');
+                menuToggle.setAttribute('aria-expanded', 'false');
             });
         });
     }
 
-    const metrics = document.querySelectorAll("[data-target]");
+    // 2. Animated Metrics Counter (IntersectionObserver)
+    const metricElements = document.querySelectorAll('[data-target]');
+    
+    const animateCount = (el) => {
+        const target = parseInt(el.getAttribute('data-target'), 10);
+        const duration = 1500; // 1.5s
+        const startTime = performance.now();
 
-    const animateMetric = (element) => {
-        const target = Number(element.dataset.target);
-        const duration = 1200;
-        const start = performance.now();
-
-        const update = (time) => {
-            const progress = Math.min((time - start) / duration, 1);
-            element.textContent = Math.floor(progress * target).toLocaleString("es-CL");
+        const updateNumber = (currentTime) => {
+            const elapsedTime = currentTime - startTime;
+            const progress = Math.min(elapsedTime / duration, 1);
+            // Ease-out curve
+            const currentCount = Math.floor((1 - Math.pow(1 - progress, 3)) * target);
+            
+            el.textContent = currentCount.toLocaleString('es-CL');
 
             if (progress < 1) {
-                requestAnimationFrame(update);
+                requestAnimationFrame(updateNumber);
+            } else {
+                el.textContent = target.toLocaleString('es-CL');
             }
         };
 
-        requestAnimationFrame(update);
+        requestAnimationFrame(updateNumber);
     };
 
-    const observer = new IntersectionObserver((entries, observerInstance) => {
-        entries.forEach((entry) => {
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
             if (entry.isIntersecting) {
-                animateMetric(entry.target);
-                observerInstance.unobserve(entry.target);
+                animateCount(entry.target);
+                obs.unobserve(entry.target);
             }
         });
-    }, {
-        threshold: 0.5
-    });
+    }, { threshold: 0.3 });
 
-    metrics.forEach((metric) => observer.observe(metric));
+    metricElements.forEach(el => observer.observe(el));
 });
