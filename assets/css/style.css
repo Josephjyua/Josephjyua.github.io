@@ -350,6 +350,70 @@ a {
     color: #626873;
     font-size: 0.75rem;
 }
+.metric-value {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+}
+
+.metric-value strong {
+    font-size: 3.5rem;
+    letter-spacing: -0.06em;
+}
+
+.metric-value span {
+    color: var(--accent);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.metric small {
+    display: block;
+    color: #626873;
+    font-size: 0.75rem;
+    margin-top: 6px;
+}
+
+.experience-impact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 24px;
+}
+
+.experience-impact span {
+    padding: 6px 10px;
+    border: 1px solid rgba(124, 156, 255, 0.3);
+    background: var(--accent-soft);
+    color: #cbd5ff;
+    border-radius: 4px;
+    font-size: 0.72rem;
+    font-weight: 600;
+}
+
+.project-highlight {
+    margin: 24px 0;
+    padding: 16px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.project-highlight strong {
+    display: block;
+    color: var(--text);
+    font-size: 1.4rem;
+    letter-spacing: -0.03em;
+}
+
+.project-highlight span {
+    color: var(--muted);
+    font-size: 0.75rem;
+}
+
+.project-link-disabled {
+    color: #626873;
+    cursor: default;
+}
 
 .timeline {
     max-width: 900px;
@@ -717,6 +781,24 @@ a {
 
     .nav-links {
         display: none;
+    }
+    .nav-links.mobile-open {
+    position: absolute;
+    top: 72px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 12px 20px 20px;
+    background: rgba(8, 9, 11, 0.98);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(16px);
+    }
+
+    .nav-links.mobile-open a {
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.04);
     }
 
     .menu-toggle {

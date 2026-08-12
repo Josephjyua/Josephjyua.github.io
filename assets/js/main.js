@@ -2,9 +2,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const menuToggle = document.querySelector(".menu-toggle");
     const navLinks = document.querySelector(".nav-links");
 
-    if (menuToggle) {
+    if (menuToggle && navLinks) {
         menuToggle.addEventListener("click", () => {
             navLinks.classList.toggle("mobile-open");
+        });
+
+        navLinks.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("mobile-open");
+            });
         });
     }
 
@@ -12,14 +18,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const animateMetric = (element) => {
         const target = Number(element.dataset.target);
-        let current = 0;
         const duration = 1200;
         const start = performance.now();
 
         const update = (time) => {
             const progress = Math.min((time - start) / duration, 1);
-            current = Math.floor(progress * target);
-            element.textContent = current;
+            element.textContent = Math.floor(progress * target).toLocaleString("es-CL");
 
             if (progress < 1) {
                 requestAnimationFrame(update);
