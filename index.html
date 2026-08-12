@@ -3,14 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta
-        name="description"
-        content="Joseph Urzúa Araya - Security Automation Engineer, Python Developer y profesional de ciberseguridad."
-    >
+    <meta name="description" content="Joseph Urzúa Araya - Security Automation Engineer, Python Developer y especialista en automatización de operaciones de ciberseguridad (SOAR / SIEM).">
     <meta name="author" content="Joseph Urzúa Araya">
+    <meta name="theme-color" content="#0a0e14">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Joseph Urzúa Araya | Security Automation Engineer">
+    <meta property="og:description" content="Desarrollo soluciones de automatización, playbooks SOAR y herramientas para operaciones SOC.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://josephjyua.github.io/">
 
     <title>Joseph Urzúa Araya | Security Automation Engineer</title>
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -18,20 +29,24 @@
 
 <header class="navbar">
     <div class="container navbar-container">
-        <a href="#home" class="logo">JU<span>.</span></a>
+        <a href="#home" class="logo" aria-label="Inicio">JU<span>.</span></a>
 
-        <nav class="nav-links">
-            <a href="#about">Sobre mí</a>
-            <a href="#experience">Experiencia</a>
-            <a href="#projects">Proyectos</a>
-            <a href="#skills">Tecnologías</a>
-            <a href="#education">Formación</a>
-            <a href="#contact">Contacto</a>
-        </nav>
-
-        <button class="menu-toggle" aria-label="Abrir menú">
-            ☰
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
         </button>
+
+        <nav class="nav-links" id="nav-links">
+            <a href="#about" class="nav-item">Sobre mí</a>
+            <a href="#impact" class="nav-item">Impacto</a>
+            <a href="#experience" class="nav-item">Experiencia</a>
+            <a href="#projects" class="nav-item">Proyectos</a>
+            <a href="#skills" class="nav-item">Tecnologías</a>
+            <a href="#education" class="nav-item">Formación</a>
+            <a href="#lab" class="nav-item">Lab</a>
+            <a href="#contact" class="nav-item nav-btn">Contacto</a>
+        </nav>
     </div>
 </header>
 
@@ -40,326 +55,212 @@
     <!-- HERO -->
     <section id="home" class="hero">
         <div class="container hero-container">
-
             <div class="hero-content">
+                <p class="eyebrow"><span class="eyebrow-dot"></span> CIBERSEGURIDAD · AUTOMATIZACIÓN · DESARROLLO</p>
 
-                <p class="eyebrow">
-                    CIBERSEGURIDAD · AUTOMATIZACIÓN · DESARROLLO
-                </p>
-
-                <h1>
-                    Joseph<br>
-                    <span>Urzúa Araya.</span>
-                </h1>
-
-                <h2>
-                    Security Automation Engineer
-                </h2>
+                <h1 class="hero-title">Joseph<br><span class="hero-highlight">Urzúa Araya.</span></h1>
+                <h2 class="hero-subtitle">Security Automation Engineer</h2>
 
                 <p class="hero-description">
-                    Desarrollo soluciones de automatización y herramientas
-                    orientadas a ciberseguridad utilizando Python, SOAR,
-                    APIs y bases de datos.
+                    Desarrollo arquitecturas de automatización y herramientas de alto impacto para operaciones de seguridad (SOC) utilizando Python, IBM SOAR, APIs REST y bases de datos.
                 </p>
 
-            <div class="hero-actions">
-                <a href="#projects" class="btn btn-primary">
-                    Ver proyectos
-                </a>
-
-                <a
-                    href="assets/docs/Joseph_Urzua_CV.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn btn-secondary"
-                >
-                    Ver CV
-                </a>
-
-                <a href="#contact" class="btn btn-secondary">
-                    Contactarme
-                </a>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">Ver proyectos</a>
+                    <a href="assets/docs/Joseph_Urzua_CV.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Ver CV</a>
+                    <a href="#contact" class="btn btn-outline">Contactarme</a>
+                </div>
             </div>
 
-            </div>
-
-            <div class="hero-terminal">
-
+            <div class="hero-terminal" aria-hidden="true">
                 <div class="terminal-header">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <span class="terminal-dot red"></span>
+                    <span class="terminal-dot yellow"></span>
+                    <span class="terminal-dot green"></span>
+                    <span class="terminal-title">bash — 80x24</span>
                 </div>
-
                 <div class="terminal-body">
-                    <p>
-                        <span class="terminal-green">$</span> whoami
-                    </p>
+                    <p><span class="terminal-green">$</span> whoami</p>
+                    <p class="terminal-output">joseph@security:~$ Security Automation Engineer</p>
 
-                    <p class="terminal-output">
-                        joseph@security:~$ Security Automation Engineer
-                    </p>
+                    <p><span class="terminal-green">$</span> cat stack.json</p>
+                    <p class="terminal-output">{ "focus": ["SOAR", "SIEM", "Python", "APIs", "ETL"] }</p>
 
-                    <p>
-                        <span class="terminal-green">$</span> skills
-                    </p>
+                    <p><span class="terminal-green">$</span> systemctl status automation-engine</p>
+                    <p class="terminal-output status"><span class="pulse-dot"></span> Active: running (high-throughput)</p>
 
-                    <p class="terminal-output">
-                        Python · SOAR · SIEM · APIs · SQL · Linux
-                    </p>
-
-                    <p>
-                        <span class="terminal-green">$</span> status
-                    </p>
-
-                    <p class="terminal-output status">
-                        ● Building security automation
-                    </p>
-
-                    <span class="terminal-cursor"></span>
+                    <p class="terminal-prompt"><span class="terminal-green">$</span> <span class="terminal-cursor"></span></p>
                 </div>
-
             </div>
-
         </div>
     </section>
-
 
     <!-- ABOUT -->
     <section id="about" class="section">
         <div class="container">
-
             <div class="section-heading">
-                <span>01</span>
+                <span class="section-num" aria-hidden="true">01</span>
                 <h2>Sobre mí</h2>
             </div>
 
             <div class="about-grid">
-
-                <div>
+                <div class="about-text">
                     <p class="section-lead">
-                        Profesional de ciberseguridad especializado en
-                        automatización de operaciones de seguridad y
-                        desarrollo de herramientas.
+                        Especialista en ciberseguridad enfocado en automatización de operaciones de seguridad (SecOps) y diseño de herramientas operativas.
                     </p>
-
                     <p>
-                        Mi experiencia combina operaciones SOC, IBM QRadar,
-                        IBM SOAR y desarrollo en Python para diseñar integraciones,
-                        automatizar procesos y construir herramientas orientadas
-                        a operaciones de seguridad.
+                        Mi trayectoria une la respuesta a incidentes en tiempo real dentro del SOC con el desarrollo de software en Python. Me especializo en orquestar plataformas complejas (IBM SOAR, IBM QRadar, Microsoft Defender) mediante APIs e ingeniería de datos.
                     </p>
-
                     <p>
-                        Me interesa especialmente la intersección entre
-                        ciberseguridad y desarrollo de software: construir
-                        soluciones que permitan analizar, integrar y responder
-                        de forma más eficiente.
+                        Construyo soluciones orientadas a la reducción drástica de fatiga de alertas, enriquecimiento automático de IOCs y contención programática de amenazas bajo entornos regulados y de alto volumen.
                     </p>
                 </div>
 
-                <div class="about-highlight">
-                    <span class="highlight-symbol">></span>
-
-                    <p>
-                        "Identificar un proceso repetitivo,
-                        entenderlo y construir una solución
-                        para automatizarlo."
-                    </p>
+                <div class="about-highlight-box">
+                    <span class="highlight-symbol" aria-hidden="true">>_</span>
+                    <blockquote>
+                        "Identificar un proceso repetitivo, comprender a fondo la amenaza y construir la ingeniería que lo automatice con trazabilidad total."
+                    </blockquote>
                 </div>
-
             </div>
-
         </div>
     </section>
-
 
     <!-- IMPACT -->
     <section id="impact" class="section section-alt">
         <div class="container">
-
             <div class="section-heading">
-                <span>02</span>
-                <h2>Impacto</h2>
+                <span class="section-num" aria-hidden="true">02</span>
+                <h2>Impacto Operacional</h2>
             </div>
 
             <p class="section-intro">
-                Automatización aplicada a operaciones de seguridad de alto volumen,
-                reduciendo tareas manuales y permitiendo dedicar más tiempo al
-                análisis e investigación proactiva.
+                Resultados medibles en producción: optimización de tiempos de respuesta, escalabilidad operativa y reducción de tareas manuales.
             </p>
 
             <div class="metrics-grid">
-
-                <div class="metric">
-                    <div class="metric-value">
-                        <strong data-target="93">0</strong>
-                        <span>%+</span>
+                <div class="metric-card">
+                    <div class="metric-top">
+                        <span class="metric-badge">Tiempos</span>
                     </div>
-
-                    <p>Reducción del tiempo de procesamiento por caso</p>
-                    <small>De 15–20 min a menos de 1 min</small>
+                    <div class="metric-value">
+                        <strong data-target="93">0</strong><span>%+</span>
+                    </div>
+                    <p class="metric-title">Reducción tiempo/caso</p>
+                    <small class="metric-desc">De 15–20 min a menos de 1 min por incidente</small>
                 </div>
 
-                <div class="metric">
-                    <div class="metric-value">
-                        <span>~</span>
-                        <strong data-target="1000">0</strong>
+                <div class="metric-card">
+                    <div class="metric-top">
+                        <span class="metric-badge">Rendimiento</span>
                     </div>
-
-                    <p>Casos procesados diariamente</p>
-                    <small>Plataforma de automatización SOC</small>
+                    <div class="metric-value">
+                        <span>~</span><strong data-target="1000">0</strong>
+                    </div>
+                    <p class="metric-title">Casos diarios</p>
+                    <small class="metric-desc">Procesados y clasificados automáticamente</small>
                 </div>
 
-                <div class="metric">
-                    <div class="metric-value">
-                        <strong data-target="14000">0</strong>
-                        <span>+</span>
+                <div class="metric-card">
+                    <div class="metric-top">
+                        <span class="metric-badge">Volumen</span>
                     </div>
-
-                    <p>Phishing procesados</p>
-                    <small>Últimos 90 días</small>
+                    <div class="metric-value">
+                        <strong data-target="14000">0</strong><span>+</span>
+                    </div>
+                    <p class="metric-title">Phishing procesados</p>
+                    <small class="metric-desc">Analizados y contenidos en los últimos 90 días</small>
                 </div>
-
             </div>
 
             <p class="metric-note">
-                Métricas basadas en volúmenes y tiempos operacionales observados
-                en soluciones implementadas en entorno profesional.
+                * Métricas correspondientes a pipelines y playbooks desplegados en producción real.
             </p>
-
         </div>
     </section>
-
 
     <!-- EXPERIENCE -->
     <section id="experience" class="section">
         <div class="container">
-
             <div class="section-heading">
-                <span>03</span>
+                <span class="section-num" aria-hidden="true">03</span>
                 <h2>Experiencia</h2>
             </div>
 
             <div class="timeline">
-
                 <article class="timeline-item">
-
-                    <div class="timeline-date">
-                        2024 — Actualidad
+                    <div class="timeline-meta">
+                        <span class="timeline-date">2024 — Actualidad</span>
+                        <span class="timeline-badge active">Actual</span>
                     </div>
-
                     <div class="timeline-content">
                         <h3>Ingeniero SOAR</h3>
-                        <h4>Novared · Santiago, Chile</h4>
-
-                        <p>
-                            Diseño y desarrollo de soluciones de automatización para operaciones
-                            de seguridad, integrando IBM SOAR, SIEM, APIs, bases de datos y
-                            herramientas externas mediante Python.
+                        <h4 class="timeline-company">Novared · Santiago, Chile</h4>
+                        <p class="timeline-summary">
+                            Diseño y despliegue de arquitecturas de automatización e integración para operaciones de seguridad multicliente.
                         </p>
-
-                        <ul>
-                            <li>
-                                Desarrollo y mantenimiento de playbooks para análisis,
-                                enriquecimiento y respuesta automática ante incidentes.
-                            </li>
-
-                            <li>
-                                Integración de IBM SOAR con Microsoft Defender,
-                                Threat Intelligence y servicios externos mediante APIs REST.
-                            </li>
-
-                            <li>
-                                Desarrollo de herramientas Python para conectar plataformas
-                                de seguridad y ejecutar acciones sobre infraestructura externa.
-                            </li>
-
-                            <li>
-                                Automatización de procesos operacionales de alto volumen,
-                                reduciendo tareas manuales y tiempos de respuesta.
-                            </li>
+                        <ul class="timeline-tasks">
+                            <li>Desarrollo de playbooks modulares en IBM SOAR para triaje, enriquecimiento y contención automatizada de incidentes.</li>
+                            <li>Integración continua entre SIEM (IBM QRadar), Microsoft Defender, Microsoft Graph y Threat Intelligence feeds vía APIs REST.</li>
+                            <li>Construcción de microservicios y scripts en Python para orquestación de acciones de aislamiento y remediación sobre endpoints y red.</li>
+                            <li>Monitoreo de rendimiento y optimización de flujos de trabajo reduciendo sustancialmente el MTTR (Mean Time to Respond).</li>
                         </ul>
-
-                        <div class="experience-impact">
-                            <span>93%+ menos tiempo por caso</span>
-                            <span>~1.000 casos/día</span>
-                            <span>14.000+ phishing / 90 días</span>
+                        <div class="experience-impact-tags">
+                            <span>93%+ reducción tiempo</span>
+                            <span>~1.000 eventos/día</span>
+                            <span>14k+ phishing / 90d</span>
                         </div>
                     </div>
-
                 </article>
-
 
                 <article class="timeline-item">
-
-                    <div class="timeline-date">
-                        2023 — 2024
+                    <div class="timeline-meta">
+                        <span class="timeline-date">2023 — 2024</span>
                     </div>
-
                     <div class="timeline-content">
                         <h3>Operador SOC</h3>
-
-                        <h4>Novared · Santiago, Chile</h4>
-
-                        <p>
-                            Monitoreo, análisis e investigación de eventos
-                            de seguridad utilizando IBM QRadar.
+                        <h4 class="timeline-company">Novared · Santiago, Chile</h4>
+                        <p class="timeline-summary">
+                            Monitoreo, análisis e investigación de eventos y alertas de seguridad en tiempo real.
                         </p>
-
-                        <ul>
-                            <li>Análisis mediante consultas AQL.</li>
-                            <li>Investigación de incidentes.</li>
-                            <li>Análisis de falsos positivos.</li>
-                            <li>Automatización de tareas mediante Python.</li>
+                        <ul class="timeline-tasks">
+                            <li>Extracción y correlación de logs complejos utilizando consultas avanzadas en AQL (Ariel Query Language) en IBM QRadar.</li>
+                            <li>Investigación de vectores de ataque, contención primaria y descarte sistemático de falsos positivos.</li>
+                            <li>Desarrollo de scripts iniciales en Python para automatizar tareas repetitivas de extracción de evidencias.</li>
                         </ul>
-
                     </div>
-
                 </article>
-
             </div>
-
         </div>
     </section>
-
 
     <!-- PROJECTS -->
     <section id="projects" class="section section-alt">
         <div class="container">
-
             <div class="section-heading">
-                <span>04</span>
+                <span class="section-num" aria-hidden="true">04</span>
                 <h2>Proyectos destacados</h2>
             </div>
 
             <p class="section-intro">
-                Soluciones profesionales y proyectos personales donde combino
-                ciberseguridad, automatización y desarrollo de software.
+                Arquitecturas de seguridad, pipelines de automatización y herramientas de ingeniería de software.
             </p>
 
             <div class="projects-grid">
-
-                <!-- 01 - SOC AUTOMATION PLATFORM -->
+                <!-- 01 -->
                 <article class="project-card featured">
-                    <div class="project-top">
-                        <span class="project-number">01</span>
-                        <span class="project-status">Caso profesional</span>
+                    <div class="project-header">
+                        <span class="project-index">01</span>
+                        <span class="project-type enterprise">Caso Profesional</span>
                     </div>
-
                     <h3>SOC Automation Platform</h3>
-
-                    <p>
-                        Plataforma para automatizar el procesamiento de eventos de seguridad,
-                        integrando múltiples SIEM, enriquecimiento, generación de tickets y
-                        análisis automático de incidentes.
+                    <p class="project-desc">
+                        Plataforma centralizada para orquestar el ciclo de vida de eventos de seguridad: ingesta multi-SIEM, enriquecimiento de IOCs, asignación inteligente y contención automatizada.
                     </p>
-
-                    <div class="project-highlight">
-                        <strong>15–20 min → &lt;1 min</strong>
-                        <span>por caso</span>
+                    <div class="project-stat-box">
+                        <span class="stat-main">15–20 min → &lt;1 min</span>
+                        <span class="stat-sub">por caso procesado</span>
                     </div>
-
                     <div class="project-tags">
                         <span>Python</span>
                         <span>IBM QRadar</span>
@@ -367,479 +268,267 @@
                         <span>AQL</span>
                         <span>REST APIs</span>
                     </div>
-
-                    <span class="project-link project-link-disabled">
-                        Caso de estudio próximamente
-                    </span>
+                    <span class="project-link disabled">Caso confidencial de producción</span>
                 </article>
 
-
-                <!-- 02 - PHISHING RESPONSE AUTOMATION -->
+                <!-- 02 -->
                 <article class="project-card featured">
-                    <div class="project-top">
-                        <span class="project-number">02</span>
-                        <span class="project-status">Caso profesional</span>
+                    <div class="project-header">
+                        <span class="project-index">02</span>
+                        <span class="project-type enterprise">Caso Profesional</span>
                     </div>
-
                     <h3>Phishing Response Automation</h3>
-
-                    <p>
-                        Pipeline automatizado para detectar, procesar y responder ante
-                        incidentes de phishing desde Microsoft Defender hasta IBM SOAR,
-                        incluyendo análisis de IOCs y acciones de contención.
+                    <p class="project-desc">
+                        Pipeline de respuesta automatizada ante incidentes de phishing: ingesta desde Microsoft Defender a IBM SOAR, análisis de encabezados, verificación de reputación URL/dominio y bloqueo preventivo.
                     </p>
-
-                    <div class="project-highlight">
-                        <strong>14.000+</strong>
-                        <span>phishing procesados en 90 días</span>
+                    <div class="project-stat-box">
+                        <span class="stat-main">14.000+ correos</span>
+                        <span class="stat-sub">procesados en 90 días</span>
                     </div>
-
                     <div class="project-tags">
                         <span>Python</span>
                         <span>IBM SOAR</span>
-                        <span>Microsoft Defender</span>
-                        <span>Microsoft Graph</span>
-                        <span>Threat Intelligence</span>
+                        <span>Defender API</span>
+                        <span>Graph API</span>
                         <span>SQLite</span>
                     </div>
-
-                    <span class="project-link project-link-disabled">
-                        Caso de estudio próximamente
-                    </span>
+                    <span class="project-link disabled">Caso confidencial de producción</span>
                 </article>
 
-
-                <!-- 03 - PHISHING INTELLIGENCE PLATFORM -->
+                <!-- 03 -->
                 <article class="project-card featured">
-                    <div class="project-top">
-                        <span class="project-number">03</span>
-                        <span class="project-status">Caso profesional</span>
+                    <div class="project-header">
+                        <span class="project-index">03</span>
+                        <span class="project-type open-source">Open Source</span>
                     </div>
-
                     <h3>Phishing Intelligence Platform</h3>
-
-                    <p>
-                        Plataforma de inteligencia y observabilidad para analizar incidentes
-                        de phishing, campañas, usuarios e indicadores de compromiso,
-                        incorporando métricas operacionales y trazabilidad de contención.
+                    <p class="project-desc">
+                        Dashboard y backend para análisis y observabilidad de campañas de phishing, consolidación de métricas de contención y trazabilidad de indicadores de compromiso (IOCs).
                     </p>
-
-                    <div class="project-highlight">
-                        <strong>14.000+</strong>
-                        <span>casos procesados en 90 días</span>
+                    <div class="project-stat-box">
+                        <span class="stat-main">Observabilidad & Métricas</span>
+                        <span class="stat-sub">Trazabilidad de IOCs</span>
                     </div>
-
                     <div class="project-tags">
                         <span>Python</span>
                         <span>FastAPI</span>
                         <span>SQLite</span>
-                        <span>Threat Intelligence</span>
+                        <span>Threat Intel</span>
                     </div>
-
-                    <a
-                        href="https://github.com/Josephjyua/Dashboard_phishing"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="project-link"
-                    >
-                        Ver proyecto en GitHub →
+                    <a href="https://github.com/Josephjyua/Dashboard_phishing" target="_blank" rel="noopener noreferrer" class="project-link">
+                        Ver repositorio en GitHub →
                     </a>
                 </article>
 
-
-                <!-- 04 - JOYSTICK MAPPER -->
+                <!-- 04 -->
                 <article class="project-card">
-                    <div class="project-top">
-                        <span class="project-number">04</span>
-                        <span class="project-status">Proyecto personal</span>
+                    <div class="project-header">
+                        <span class="project-index">04</span>
+                        <span class="project-type personal">Tooling</span>
                     </div>
-
                     <h3>Joystick Mapper</h3>
-
-                    <p>
-                        Aplicación multiplataforma para mapear controles físicos a teclado
-                        y mouse, desarrollada con una arquitectura modular orientada a
-                        Windows, Linux y macOS.
+                    <p class="project-desc">
+                        Software multiplataforma en Python para remapear entradas de mandos físicos hacia eventos de teclado y ratón con arquitectura de hilos y bajo consumo de CPU.
                     </p>
-
                     <div class="project-tags">
                         <span>Python</span>
                         <span>pygame-ce</span>
                         <span>Tkinter</span>
-                        <span>Cross-platform</span>
+                        <span>OS Events</span>
                     </div>
-
-                    <span class="project-link project-link-disabled">
-                        <a
-                            href="https://github.com/Josephjyua/JoystickMapper"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="project-link"
-                        >
-                            Ver proyecto en GitHub →
-                        </a>                    
-                    </span>
+                    <a href="https://github.com/Josephjyua/JoystickMapper" target="_blank" rel="noopener noreferrer" class="project-link">
+                        Ver repositorio en GitHub →
+                    </a>
                 </article>
 
-
-                <!-- 05 - GODOT RPG -->
+                <!-- 05 -->
                 <article class="project-card">
-                    <div class="project-top">
-                        <span class="project-number">05</span>
-                        <span class="project-status">Proyecto personal</span>
+                    <div class="project-header">
+                        <span class="project-index">05</span>
+                        <span class="project-type personal">Desarrollo</span>
                     </div>
-
-                    <h3>Godot RPG</h3>
-
-                    <p>
-                        Videojuego 2D enfocado en sistemas de progresión,
-                        generación procedural, combate por turnos y arquitectura
-                        orientada a componentes y estados.
+                    <h3>Godot 2D RPG Engine</h3>
+                    <p class="project-desc">
+                        Arquitectura de juego 2D con backend modular, máquinas de estados finitos (FSM) y combate por turnos sincronizado contra modelos de datos estructurados.
                     </p>
-
                     <div class="project-tags">
                         <span>Godot</span>
                         <span>GDScript</span>
-                        <span>Procedural Generation</span>
-                        <span>Game Development</span>
+                        <span>FSM</span>
+                        <span>Architecture</span>
                     </div>
-
-                    <span class="project-link project-link-disabled">
-                        Próximamente
-                    </span>
+                    <span class="project-link disabled">Próximamente en GitHub</span>
                 </article>
-
             </div>
-
         </div>
     </section>
-
 
     <!-- SKILLS -->
     <section id="skills" class="section">
         <div class="container">
-
             <div class="section-heading">
-                <span>05</span>
-                <h2>Tecnologías</h2>
+                <span class="section-num" aria-hidden="true">05</span>
+                <h2>Tecnologías & Stack</h2>
             </div>
 
             <div class="skills-grid">
-
                 <div class="skill-category">
-                    <h3>Ciberseguridad</h3>
-
+                    <div class="skill-cat-header">
+                        <span class="skill-icon">🛡️</span>
+                        <h3>Ciberseguridad & SOC</h3>
+                    </div>
                     <div class="skill-list">
                         <span>IBM SOAR</span>
                         <span>IBM QRadar</span>
-                        <span>SIEM</span>
-                        <span>SOAR</span>
+                        <span>Microsoft Defender</span>
+                        <span>AQL</span>
                         <span>Incident Response</span>
                         <span>Threat Intelligence</span>
                     </div>
                 </div>
 
-
                 <div class="skill-category">
-                    <h3>Desarrollo</h3>
-
+                    <div class="skill-cat-header">
+                        <span class="skill-icon">⚙️</span>
+                        <h3>Desarrollo & Automatización</h3>
+                    </div>
                     <div class="skill-list">
-                        <span>Python</span>
+                        <span>Python 3</span>
                         <span>FastAPI</span>
                         <span>REST APIs</span>
-                        <span>SQL</span>
-                        <span>JavaScript</span>
-                        <span>GDScript</span>
+                        <span>ETL Pipelines</span>
+                        <span>Bash / Shell</span>
+                        <span>Git & GitHub</span>
                     </div>
                 </div>
-
 
                 <div class="skill-category">
-                    <h3>Datos & Sistemas</h3>
-
+                    <div class="skill-cat-header">
+                        <span class="skill-icon">🗄️</span>
+                        <h3>Datos & Infraestructura</h3>
+                    </div>
                     <div class="skill-list">
+                        <span>Linux (RHEL / Debian)</span>
                         <span>PostgreSQL</span>
                         <span>SQLite</span>
-                        <span>SQL Server</span>
-                        <span>Linux</span>
-                        <span>Windows</span>
-                        <span>Git</span>
+                        <span>Docker</span>
+                        <span>Networking / TCP</span>
+                        <span>Windows Server</span>
                     </div>
                 </div>
-
             </div>
-
         </div>
     </section>
-
 
     <!-- EDUCATION -->
     <section id="education" class="section section-alt">
         <div class="container">
-
             <div class="section-heading">
-                <span>06</span>
-                <h2>Formación</h2>
+                <span class="section-num" aria-hidden="true">06</span>
+                <h2>Formación & Certificaciones</h2>
             </div>
 
             <div class="education-grid">
-
                 <article class="education-card">
-                    <div class="education-year">
-                        2019 — 2022
-                    </div>
-
+                    <div class="education-year">2019 — 2022</div>
                     <div class="education-content">
                         <h3>Técnico en Informática</h3>
-                        <h4>IACC · Santiago, Chile</h4>
-
-                        <p>
-                            Formación técnica en informática, programación,
-                            sistemas, bases de datos y tecnologías de la información.
-                        </p>
+                        <h4 class="education-inst">IACC · Santiago, Chile</h4>
+                        <p>Bases de desarrollo de software, redes de datos, administración de sistemas operativos y bases de datos relacionales.</p>
                     </div>
                 </article>
 
-
-                <article class="education-card">
-                    <div class="education-year">
-                        En curso
-                    </div>
-
+                <article class="education-card highlight-card">
+                    <div class="education-year">En curso</div>
                     <div class="education-content">
                         <h3>Diplomado en Ciberseguridad</h3>
-                        <h4>Actualmente en formación</h4>
-
-                        <p>
-                            Especialización orientada al fortalecimiento de
-                            conocimientos en ciberseguridad y seguridad informática.
-                        </p>
+                        <h4 class="education-inst">Especialización Profesional</h4>
+                        <p>Profundización en respuesta ante incidentes, análisis forense digital, seguridad perimetral, marcos de trabajo y gobernanza de seguridad.</p>
                     </div>
                 </article>
-
             </div>
-
-            <div class="certifications">
-                <h3>Certificaciones</h3>
-
-                <div class="certification-list">
-
-                    <div class="certification-item">
-                        <span class="certification-status">En progreso</span>
-                        <strong>Certificaciones de Ciberseguridad</strong>
-                        <span>Próximamente</span>
-                    </div>
-
-                </div>
-            </div>
-
         </div>
     </section>
-
 
     <!-- AUTOMATION LAB -->
     <section id="lab" class="section">
         <div class="container">
-
             <div class="section-heading">
-                <span>07</span>
+                <span class="section-num" aria-hidden="true">07</span>
                 <h2>Automation Lab</h2>
             </div>
 
             <p class="section-intro">
-                Experimentos, prototipos y herramientas desarrolladas a lo largo
-                de mi aprendizaje en programación y automatización.
+                Pruebas de concepto, bots experimentales y scripts de interacción operativa.
             </p>
 
             <div class="lab-grid">
-
                 <article class="lab-card">
-                    <div class="lab-icon">
-                        PY
-                    </div>
-
-                    <div>
-                        <h3>Game Automation</h3>
-
-                        <p>
-                            Proyectos experimentales desarrollados en Python para
-                            automatizar tareas repetitivas e interactuar con
-                            aplicaciones mediante lógica basada en eventos.
-                        </p>
-
+                    <div class="lab-badge">PY</div>
+                    <div class="lab-body">
+                        <h3>Game / UI Automation</h3>
+                        <p>Automatización de flujos repetitivos y control de eventos del sistema operativo mediante detección de estados.</p>
                         <div class="project-tags">
                             <span>Python</span>
                             <span>Automation</span>
-                            <span>Bot Development</span>
+                            <span>Event-driven</span>
                         </div>
-                        <span class="project-link project-link-disabled">
-                            <a
-                                href="https://github.com/Josephjyua/BOT_LENIADOR"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="project-link"
-                            >
-                                Ver proyecto en GitHub →
-                            </a>                    
-                    </span>
+                        <a href="https://github.com/Josephjyua/BOT_LENIADOR" target="_blank" rel="noopener noreferrer" class="project-link">
+                            Ver repositorio en GitHub →
+                        </a>
                     </div>
                 </article>
-
 
                 <article class="lab-card">
-                    <div class="lab-icon">
-                        EX
-                    </div>
-
-                    <div>
-                        <h3>Experimentos Python</h3>
-
-                        <p>
-                            Colección de scripts, herramientas y pruebas de concepto
-                            desarrolladas para resolver problemas específicos y
-                            explorar nuevas tecnologías.
-                        </p>
-
+                    <div class="lab-badge">API</div>
+                    <div class="lab-body">
+                        <h3>Scripts & API Integrations</h3>
+                        <p>Herramientas modulares de extracción de datos, parsing de logs de seguridad y orquestación con APIs externas.</p>
                         <div class="project-tags">
                             <span>Python</span>
-                            <span>APIs</span>
-                            <span>Automation</span>
+                            <span>REST APIs</span>
+                            <span>Data Parsing</span>
                         </div>
                     </div>
                 </article>
-
-
-                <article class="lab-card">
-                    <div class="lab-icon">
-                        SO
-                    </div>
-
-                    <div>
-                        <h3>Security Automation</h3>
-
-                        <p>
-                            Experimentación con automatización aplicada a
-                            ciberseguridad, incluyendo enriquecimiento de
-                            indicadores, APIs y procesamiento de información.
-                        </p>
-
-                        <div class="project-tags">
-                            <span>Cybersecurity</span>
-                            <span>SOAR</span>
-                            <span>Python</span>
-                        </div>
-                    </div>
-                </article>
-
             </div>
-
         </div>
     </section>
-
-
-    <!-- GITHUB -->
-    <section id="github" class="section section-alt">
-        <div class="container">
-
-            <div class="github-section">
-
-                <div>
-                    <p class="eyebrow">
-                        OPEN SOURCE & DEVELOPMENT
-                    </p>
-
-                    <h2>
-                        Mi código está
-                        <span>en GitHub.</span>
-                    </h2>
-
-                    <p>
-                        Proyectos personales, experimentos y herramientas
-                        desarrolladas para aprender, automatizar procesos y
-                        resolver problemas reales.
-                    </p>
-                </div>
-
-                <a
-                    href="https://github.com/Josephjyua"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn btn-primary"
-                >
-                    Visitar GitHub →
-                </a>
-
-            </div>
-
-        </div>
-    </section>
-
 
     <!-- CONTACT -->
-    <section id="contact" class="section contact-section">
+    <section id="contact" class="section contact-section section-alt">
         <div class="container">
-
             <div class="contact-content">
-
-                <p class="eyebrow">
-                    08 · CONTACTO
-                </p>
-
-                <h2>
-                    Construyamos algo
-                    <span>útil.</span>
-                </h2>
-
-                <p>
-                    Estoy interesado en oportunidades relacionadas con
-                    ciberseguridad, automatización, desarrollo y
-                    herramientas de seguridad.
+                <p class="eyebrow"><span class="eyebrow-dot"></span> 08 · CONTACTO</p>
+                <h2>Construyamos algo <span class="hero-highlight">eficiente.</span></h2>
+                <p class="contact-description">
+                    Disponible para colaborar en proyectos y roles de ingeniería de automatización de seguridad, arquitecturas SOAR y desarrollo backend en Python.
                 </p>
 
                 <div class="contact-links">
-
-                    <a
-                        href="https://github.com/Josephjyua"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        GitHub
-                    </a>
-
-                    <a
-                        href="https://www.linkedin.com/in/joseph-urzúa-araya-a55866274"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
+                    <a href="https://www.linkedin.com/in/joseph-urz%C3%BAa-araya-a55866274" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                         LinkedIn
                     </a>
-
-                    <a
-                        href="assets/docs/Joseph_Urzua_CV.pdf"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Ver CV
+                    <a href="https://github.com/Josephjyua" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                        GitHub
                     </a>
-
+                    <a href="assets/docs/Joseph_Urzua_CV.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                        Descargar CV
+                    </a>
                 </div>
-
             </div>
-
         </div>
     </section>
 
 </main>
 
-
 <footer class="footer">
     <div class="container footer-container">
-        <span>© 2026 Joseph Urzúa Araya</span>
-        <span>Built with HTML · CSS · JavaScript</span>
+        <p>© 2026 Joseph Urzúa Araya. Construido con arquitectura limpia y rendimiento optimizado.</p>
+        <a href="#home" class="back-to-top" aria-label="Volver arriba">↑ Inicio</a>
     </div>
 </footer>
 
 <script src="assets/js/main.js"></script>
-
 </body>
 </html>
